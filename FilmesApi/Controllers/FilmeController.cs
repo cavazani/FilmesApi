@@ -12,10 +12,11 @@ namespace FilmesApi.Controllers
     {
         public static List<Filme> filmes = new List<Filme>();
 
-
-        public void AdicionarFilme(Filme filme) 
+        [HttpPost]
+        public void AdicionarFilme([FromBody]Filme filme) 
         {
             filmes.Add(filme);
+            Console.WriteLine(filme.Titulo);
         }
     }
 }
